@@ -91,7 +91,7 @@ class Retriever:
         self.device = device
 
     def embed(self, texts):
-        return self.model.encode(texts, normalize_embeddings=True, convert_to_numpy=True, normalize_embeddings=True)
+        return self.model.encode(texts, normalize_embeddings=True, convert_to_numpy=True)
 
     def search(self, query, top_k=5):
         query_vec = self.embed([query]).astype("float32")
