@@ -17,7 +17,7 @@ EMBEDDINGS_DIR = BASE_DIR / "embeddings"
 LOGS_DIR = BASE_DIR / "logs"
 
 # Files
-DATASET_PATH = DATA_DIR / "dataset.csv"            # expected columns: id, question, answer (utf-8)
+DATASET_PATH = DATA_DIR / "dataset_clean.csv"            # expected columns: id, question, answer (utf-8)
 FAISS_INDEX_PATH = EMBEDDINGS_DIR / "faiss_index.bin"
 EMBEDDINGS_NPY_PATH = EMBEDDINGS_DIR / "embeddings.npy"
 QUESTIONS_META_PATH = EMBEDDINGS_DIR / "questions_meta.json"  # mapping index -> {id,question}
