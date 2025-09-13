@@ -59,22 +59,26 @@ import torch
 from sentence_transformers import SentenceTransformer
 import pandas as pd
 import os
-from datasets import load_dataset
+# from datasets import load_dataset
 
 class Retriever:
     def __init__(self, model_name, device="cpu"):
         # Hugging Face dataset load karo
-        dataset = load_dataset("Za-heer/qa_bot_data")
+        # dataset = load_dataset("Za-heer/qa_bot_data")
 
-        # Cache path nikal lo (dataset ke andar jo files hain unka path hota hai)
-        data_dir = dataset["train"].cache_files[0]["filename"]
-        cache_dir = os.path.dirname(data_dir)
+        # # Cache path nikal lo (dataset ke andar jo files hain unka path hota hai)
+        # data_dir = dataset["train"].cache_files[0]["filename"]
+        # cache_dir = os.path.dirname(data_dir)
 
-        # Dataset files
-        dataset_path = os.path.join(cache_dir, "dataset_clean.csv")
-        faiss_index_path = os.path.join(cache_dir, "faiss_index.bin")
-        embeddings_path = os.path.join(cache_dir, "embeddings.npy")
-        meta_path = os.path.join(cache_dir, "questions_meta.json")
+        # # Dataset files
+        # dataset_path = os.path.join(cache_dir, "dataset_clean.csv")
+        # faiss_index_path = os.path.join(cache_dir, "faiss_index.bin")
+        # embeddings_path = os.path.join(cache_dir, "embeddings.npy")
+        # meta_path = os.path.join(cache_dir, "questions_meta.json")
+        
+        dataset_path = "qa_bot_data/dataset_clean.csv"
+        faiss_index_path = "qa_bot_data/faiss_index.bin"
+        meta_path = "qa_bot_data/questions_meta.json"
 
         # Load CSV
         self.df = pd.read_csv(dataset_path)
