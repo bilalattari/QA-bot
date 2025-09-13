@@ -20,7 +20,8 @@ LOGS_DIR = BASE_DIR / "logs"
 # Files
 DATASET_PATH = hf_hub_download(               # 👈 Hugging Face se download karega
     repo_id="Za-heer/qa_bot_data", 
-    filename="dataset_clean.csv"
+    filename="dataset_clean.csv",
+    repo_type="dataset"
 )
 
 # DATASET_PATH = DATA_DIR / "dataset.csv"            # expected columns: id, question, answer (utf-8)
