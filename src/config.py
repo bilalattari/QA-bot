@@ -7,6 +7,7 @@ Keep only non-sensitive settings here. Use environment variables to override in 
 from pathlib import Path
 import os
 from typing import Optional
+from huggingface_hub import hf_hub_download
 
 # ---------- Paths ----------
 # Note: this file lives in src/, so parent.parent gives repo root
@@ -17,7 +18,12 @@ EMBEDDINGS_DIR = BASE_DIR / "embeddings"
 LOGS_DIR = BASE_DIR / "logs"
 
 # Files
-DATASET_PATH = DATA_DIR / "dataset_clean.csv"            # expected columns: id, question, answer (utf-8)
+DATASET_PATH = hf_hub_download(               # 👈 Hugging Face se download karega
+    repo_id="Za-heer/qa_bot_data", 
+    filename="dataset_clean.csv"
+)
+
+# DATASET_PATH = DATA_DIR / "dataset.csv"            # expected columns: id, question, answer (utf-8)
 FAISS_INDEX_PATH = EMBEDDINGS_DIR / "faiss_index.bin"
 EMBEDDINGS_NPY_PATH = EMBEDDINGS_DIR / "embeddings.npy"
 QUESTIONS_META_PATH = EMBEDDINGS_DIR / "questions_meta.json"  # mapping index -> {id,question}
