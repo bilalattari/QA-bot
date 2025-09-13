@@ -74,7 +74,7 @@ class Retriever:
         dataset_path = os.path.join(cache_dir, "dataset_clean.csv")
         faiss_index_path = os.path.join(cache_dir, "faiss_index.bin")
         embeddings_path = os.path.join(cache_dir, "embeddings.npy")
-        meta_path = os.path.join(cache_dir, "meta.json")
+        meta_path = os.path.join(cache_dir, "questions_meta.json")
 
         # Load CSV
         self.df = pd.read_csv(dataset_path)
