@@ -1,11 +1,3 @@
-# src/preprocess.py
-"""
-Basic preprocessing for Urdu QA dataset.
-- Removes duplicates & nulls
-- Normalizes text (whitespace, punctuation)
-- Saves cleaned dataset to data/dataset_clean.csv
-"""
-
 import pandas as pd
 import re
 from src import config

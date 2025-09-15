@@ -1,8 +1,3 @@
-# src/ingest.py
-"""
-Build FAISS index + metadata from cleaned dataset.
-"""
-
 import json
 import numpy as np
 import pandas as pd
